@@ -33,11 +33,11 @@
 //    return head;
 //}
 //
-//// 해당 부분 코드 실행 안 됨.. 왜 그런지는 모르겠지만..
+//// xcode에서는 printf 함수에다가 \n 안 넣어주면 출력 안해줌... 이유는 확인중.
 //void display(Node *head) {
 //    Node *start = head;
 //    while(start) {
-//        printf("%d ", start->data);
+//        printf("%d \n", start->data);
 //        start = start->next;
 //    }
 //}
