@@ -1,6 +1,8 @@
 """
 [Reference]
 http://sexycoder.tistory.com/67
+http://terms.naver.com/entry.nhn?docId=3405381&cid=47324&categoryId=47324
+-> 페르마의 소정리에 대한 자세한 증명
 http://koosaga.com/entry/이항계수-nCr-mod-p-계산하기
 """
 
