@@ -22,6 +22,6 @@ for i in range(x):
         if b + a[i-1][0] > b + a[i-1][1]:
             a[i][2] = b + a[i-1][1]
         else:
-            a[i][2] = b+a[i-1][0]
+            a[i][2] = b + a[i-1][0]
 
 print(min(a[x-1]))
