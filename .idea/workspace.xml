@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab8c75f3-9942-44a0-95a1-1b874f109849" name="Default" comment="" />
+    <list default="true" id="ab8c75f3-9942-44a0-95a1-1b874f109849" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,17 +16,35 @@
       <file leaf-file-name="1260.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/1260.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+            <state relative-caret-position="285">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1094.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="1094.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BOJ/Simulation/1094.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="9205.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/9205.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="11004.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BOJ/Sorting/11004.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -45,6 +65,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/BOJ/Simulation/1094.py" />
+        <option value="$PROJECT_DIR$/BOJ/Sorting/11004.py" />
       </list>
     </option>
   </component>
@@ -76,7 +97,7 @@
               <item name="algorithmsPractice" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithmsPractice" type="462c0819:PsiDirectoryNode" />
               <item name="BOJ" type="462c0819:PsiDirectoryNode" />
-              <item name="DFS&amp;BFS" type="462c0819:PsiDirectoryNode" />
+              <item name="Sorting" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -100,7 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.1094">
+  <component name="RunManager" selected="Python.11004">
     <configuration name="1094" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algorithmsPractice" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,6 +135,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BOJ/Simulation/1094.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="11004" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="algorithmsPractice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BOJ/Sorting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BOJ/Sorting/11004.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,9 +179,11 @@
     <list>
       <item itemvalue="Python.1260" />
       <item itemvalue="Python.1094" />
+      <item itemvalue="Python.11004" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.11004" />
         <item itemvalue="Python.1094" />
         <item itemvalue="Python.1260" />
       </list>
@@ -190,6 +231,41 @@
     <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/1260.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1501">
+          <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/Simulation/1094.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/9205.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/1260.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1501">
+          <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/Simulation/1094.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/1260.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1501">
           <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
         </state>
       </provider>
@@ -201,17 +277,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/1260.py">
+    <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/9205.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+        <state relative-caret-position="285">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BOJ/Simulation/1094.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/DFS&amp;BFS/1260.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/Sorting/11004.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
