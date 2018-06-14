@@ -9,6 +9,9 @@ def dfs(x):
     for item in adj[x]:
         if match[item] == -1 or dfs(match[item]):
             match[item] = x
+            print(match)
+            print(count, matched)
+            print(vis)
             return 1
     return
 
@@ -32,6 +35,8 @@ for _ in range(int(Read())):
                 odd_cnt += 1
 
     adj = [[] for _ in range(even_cnt)]
+    print(num)
+    print(adj)
 
     for i in range(N):
         for j in range(M):
@@ -45,12 +50,16 @@ for _ in range(int(Read())):
                         if 0 <= nx < N and 0 <= ny < M and classroom[nx][ny] == '.':
                             adj[num[i][j]].append(num[nx][ny])
 
+    print(adj)
+
     vis = [0] * even_cnt
     match = [-1] * odd_cnt
     count = 0
 
     matched = 0
+    print(even_cnt)
     for i in range(even_cnt):
         count += 1
         matched += dfs(i)
+        print(count, matched, "AAA")
     print(even_cnt + odd_cnt - matched)

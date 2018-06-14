@@ -15,7 +15,6 @@ for i in range(10):
 
 print(result)
 
-
 # 재귀로 풀려고 했는데 if elif 정상적으로 동작 안하는거 같다... 뭐같다.
 # 논리적 생각과 실제 결과가 갈라서 빡침
 # number_set = [str(i) for i in range(10)]
