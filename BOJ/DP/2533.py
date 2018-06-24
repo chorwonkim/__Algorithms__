@@ -22,12 +22,16 @@ for _ in (range(N-1)):
 
 first = 0
 
+print(d)
+
 
 def func_2533(x):
     visited[x] = True
     result[x][0] = 0
     result[x][1] = 1
 
+    print(visited)
+    print(result)
     temp = d[x]
     mem_middle = process.memory_info().rss / 1024 / 1024
     print("{}".format(mem_middle), "AAAA")
