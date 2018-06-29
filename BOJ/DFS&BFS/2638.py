@@ -17,6 +17,7 @@ def checking_cheese():
             else:
                 cheese[i][j] = 0
 
+    print(cheese)
     return count == 0
 
 
@@ -36,6 +37,8 @@ def func_2638(x, y):
 
 while not checking_cheese():
     func_2638(0, 0)
+    print(cheese)
+    print("AAAA")
     result += 1
 
 print(result)
