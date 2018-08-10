@@ -2,7 +2,7 @@ n = int(input())
 x = []
 
 for i in range(n):
-    x.append(list(map(int, input().split(' '))))
+    x.append(list(map(int, input().split())))
 
     for j in range(len(x)):
 

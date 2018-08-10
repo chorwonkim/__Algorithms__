@@ -37,3 +37,21 @@ def mergeSort(myList):
 
 x = [6, 3, 2, 8, 1, 4, 7, 5]
 print(mergeSort(x))
+
+
+def mergeSort2(array):
+    if len(array) <= 1:
+        return array
+
+    mid = len(array) // 2
+
+    leftList = array[:mid]
+    rightList = array[mid:]
+
+    leftList = mergeSort2(leftList)
+    rightList = mergeSort2(rightList)
+
+    return merge(leftList, rightList)
+
+x = [6, 3, 2, 8, 1, 4, 7, 5]
+print(mergeSort2(x))
