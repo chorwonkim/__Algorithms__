@@ -1,15 +1,16 @@
-import sys
-Read = sys.stdin.readline
+from sys import stdin
+Read = stdin.readline
 N, M = map(int, Read().split())
 notebooks_want = [[] for _ in range(N)]
 
 
-def dfs(x):
+def func_1298(x):
     if people[x] == count:
         return 0
     people[x] = count
     for item in notebooks_want[x]:
-        if notebook[item-1] == -1 or dfs(notebook[item-1]):
+        # item이 int가 아닌 list로 들어가는 경우가 있는 것 같다.
+        if notebook[item-1] == -1 or func_1298(notebook[item-1]):
             notebook[item-1] = x
             return 1
     return 0
@@ -18,7 +19,7 @@ def dfs(x):
 for i in range(M):
     first, number = map(int, Read().split())
 
-    notebooks_want[first-1].append(number)
+    notebooks_want[first-1].append(number-1)
 
 people = [0] * N
 notebook = [-1] * M
@@ -27,7 +28,7 @@ matched = 0
 
 for i in range(N):
     count += 1
-    matched += dfs(i)
+    matched += func_1298(i)
 
 print(matched)
 
