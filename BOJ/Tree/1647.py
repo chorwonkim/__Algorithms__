@@ -61,6 +61,7 @@ for i in range(M):
 
 temp.sort(key=lambda x: x[-1])
 
+
 def union_find(i):
     if i == checker[i]:
         return i
