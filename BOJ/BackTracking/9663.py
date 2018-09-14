@@ -1,29 +1,26 @@
-import sys
-sys.setrecursionlimit(1000000)
 N = int(input())
-col = [i for i in range(N+1)]
+col = [0] * N
 result = 0
 
 
 def queens(i):
-    if i > N:
+    if i == N:
         global result
         result += 1
     else:
-        for j in range(1, N+1):
-            col[j] = i
+        for j in range(N):
+            col[i] = j
             if promising(i):
                 queens(i+1)
-            else:
-                col[i] = 0
 
 
 def promising(i):
-    for j in range(1, i):
+    for j in range(i):
         if col[j] == col[i]:
             return False
-
-        if abs(col[j] - col[i]) == abs(j-i):
+        if col[j] - col[i] == i-j:
+            return False
+        if col[i] - col[j] == i-j:
             return False
 
     return True

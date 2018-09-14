@@ -48,43 +48,67 @@
 # print(BFS(graph, V))
 
 
+# import sys
+# sys.setrecursionlimit(10000000)
+#
+# N, M, V = map(int, sys.stdin.readline().rstrip().split())
+# graph = [[] for _ in range(1002)]
+#
+# for _ in range(M):
+#     S, E = map(int, sys.stdin.readline().rstrip().split())
+#     graph[S].append(E)
+#     graph[E].append(S)
+#
+# for item in graph:
+#     item.sort()
+#
+#
+# def DFS(root):
+#     if visited[root]:
+#         return
+#     visited[root]=1
+#     print(root, end=' ')
+#     for sub in graph[root]:
+#         DFS(sub)
+#
+#
+# def BFS(root):
+#     queue = [root]
+#     while queue:
+#         root = queue.pop(0)
+#         if visited[root]:continue
+#         visited[root]=1
+#         print(root, end=' ')
+#         for sub in graph[root]:
+#             queue.append(sub)
+#
+#
+# visited = [0 for _ in range(1002)]
+# DFS(V)
+# print()
+# visited = [0 for _ in range(1002)]
+# BFS(V)
+
 import sys
-sys.setrecursionlimit(10000000)
+Read = sys.stdin.readline
 
-N, M, V = map(int, sys.stdin.readline().rstrip().split())
-graph = [[] for _ in range(1002)]
+N, M, V = map(int, Read().split())
+Map = [[0 for _ in range(N)] for _ in range(N)]
 
-for _ in range(M):
-    S, E = map(int, sys.stdin.readline().rstrip().split())
-    graph[S].append(E)
-    graph[E].append(S)
+for i in range(M):
+    S, E = map(int, Read().split())
 
-for item in graph:
-    item.sort()
+    Map[S-1][E-1] = Map[E-1][S-1] = 1
 
 
-def DFS(root):
-    if visited[root]:
-        return
-    visited[root]=1
-    print(root, end=' ')
-    for sub in graph[root]:
-        DFS(sub)
+def dfs(root):
+    visited_dfs[root] = 1
+    for i in range(N):
+        if Map[root][i] == 1 and not visited_dfs[i]:
+            print(i+1, end=" ")
+            dfs(i)
 
 
-def BFS(root):
-    queue = [root]
-    while queue:
-        root = queue.pop(0)
-        if visited[root]:continue
-        visited[root]=1
-        print(root, end=' ')
-        for sub in graph[root]:
-            queue.append(sub)
-
-
-visited = [0 for _ in range(1002)]
-DFS(V)
-print()
-visited = [0 for _ in range(1002)]
-BFS(V)
+visited_dfs = [0 for _ in range(N)]
+print(V, end=" ")
+dfs(V-1)
