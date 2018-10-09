@@ -13,6 +13,9 @@ start = case_set[0:length]
 link = case_set[:length-1:-1]
 result = 10000
 
+print(start)
+print(link)
+
 # for item in start:
 #     temp_start = 0
 #     temp_link = 0
