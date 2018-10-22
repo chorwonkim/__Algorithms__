@@ -89,14 +89,14 @@
 # visited = [0 for _ in range(1002)]
 # BFS(V)
 
-import sys
-Read = sys.stdin.readline
+from collections import deque
 
-N, M, V = map(int, Read().split())
+N, M, V = map(int, input().split())
 Map = [[0 for _ in range(N)] for _ in range(N)]
+d = deque()
 
 for i in range(M):
-    S, E = map(int, Read().split())
+    S, E = map(int, input().split())
 
     Map[S-1][E-1] = Map[E-1][S-1] = 1
 
@@ -104,11 +104,28 @@ for i in range(M):
 def dfs(root):
     visited_dfs[root] = 1
     for i in range(N):
-        if Map[root][i] == 1 and not visited_dfs[i]:
+        if Map[root][i] and not visited_dfs[i]:
             print(i+1, end=" ")
             dfs(i)
+
+
+def bfs(root):
+    d.append(root)
+    while d:
+        root = d.popleft()
+        if visited_bfs[root]:
+            continue
+        visited_bfs[root] = 1
+        print(root+1, end=" ")
+
+        for i in range(N):
+            if Map[root][i] and not visited_bfs[i]:
+                d.append(i)
 
 
 visited_dfs = [0 for _ in range(N)]
 print(V, end=" ")
 dfs(V-1)
+visited_bfs = [0 for _ in range(N)]
+queue = [0 for _ in range(N)]
+bfs(V-1)
