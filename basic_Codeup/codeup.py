@@ -162,5 +162,72 @@
 # print(format(a, ".2f"))
 
 # 6043
-a, b = map(float, input().split())
-print(format(a/b, ".3f"))
+# a, b = map(float, input().split())
+# print(format(a/b, ".3f"))
+
+# 6044
+# a, b = map(int, input().split())
+# print(a+b)
+# print(a-b)
+# print(a*b)
+# print(a//b)
+# print(a%b)
+# print(format(a/b, ".2f"))
+
+# 6045
+# a, b, c = map(int, input().split())
+# temp = a+b+c
+# print(temp, format(temp/3, ".2f"))
+
+# 6046
+# n = int(input())
+# print(n<<1)
+
+# 6047
+# a, b = map(int, input().split())
+# print(a<<b)
+
+# 6048~51
+# a, b = map(int, input().split())
+# print(a<b)
+
+# 6052
+# a = int(input())
+# print(bool(a))
+
+# 6053
+# a = bool(int(input()))
+# print(not a)
+
+# 6054
+# a, b = map(int, input().split())
+# print(bool(a) and bool(b))
+
+# 6055
+# a, b = map(int, input().split())
+# print(bool(a) or bool(b))
+
+# 6056
+# a, b = map(int, input().split())
+# a = bool(a)
+# b = bool(b)
+# print((a and (not b)) or ((not a) and b))
+# print(((not a) or b) and (a or (not b)))
+
+# 6057
+# a, b = map(int, input().split())
+# a = bool(a)
+# b = bool(b)
+# print(((not a) or b) and (a or (not b)))
+
+# 6058
+# a, b = map(int, input().split())
+# print(not (bool(a) or bool(b)))
+
+# 6059
+# a = int(input())
+# print(~a)
+
+# 6060
+a, b = map(int, input().split())
+print(a & b)
