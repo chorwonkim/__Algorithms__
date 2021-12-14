@@ -229,5 +229,163 @@
 # print(~a)
 
 # 6060
-a, b = map(int, input().split())
-print(a & b)
+# a, b = map(int, input().split())
+# print(a & b)
+
+# 6061
+# 비트단위 연산은 빠른 계산이 필요한 그래픽처리에서도 효과적으로 사용
+# a, b = map(int, input().split())
+# print(a | b)
+
+# 6062
+# a, b = map(int, input().split())
+# print(a ^ b)
+
+# 6063
+# a, b = map(int, input().split())
+# print(a if a>=b else b)
+
+# 6064
+# a, b, c = map(int, input().split())
+# print((a if a<=b else b) if ((a if a<=b else b)<=c) else c)
+
+# 6065
+# a, b, c = map(int, input().split())
+
+# if a % 2 == 0:
+#     print(a)
+
+# if b % 2 == 0:
+#     print(b)
+
+# if c % 2 == 0:
+#     print(c)
+
+# 6066
+# a = map(int, input().split())
+# for i in a:
+#     if i % 2 == 0:
+#         print("even")
+#     else:
+#         print("odd")
+
+# 6067
+# a = int(input())
+# if a < 0:
+#     if a % 2 == 0:
+#         print("A")
+#     else:
+#         print("B")
+# else:
+#     if a % 2 == 0:
+#         print("C")
+#     else:
+#         print("D")
+
+# 6068
+# a = int(input())
+# if a >= 90:
+#     print("A")
+# elif a >= 70 and a <= 89:
+#     print("B")
+# elif a >= 40 and a <= 69:
+#     print("C")
+# else:
+#     print("D")
+
+# 6069
+# a = input()
+# if a == 'A':
+#     print("best!!!")
+# elif a == 'B':
+#     print("good!!")
+# elif a == 'C':
+#     print("run!")
+# elif a == 'D':
+#     print("slowly~")
+# else:
+#     print("what?")
+
+# 6070
+# a = int(input())
+# if a // 3 == 1:
+#     print("spring")
+# elif a // 3 == 2:
+#     print("summer")
+# elif a // 3 == 3:
+#     print("fall")
+# else:
+#     print("winter")
+
+# 6071
+# while True:
+#     a = int(input())
+#     if a == 0:
+#         break
+#     else:
+#         print(a)
+
+# 6072
+# a = int(input())
+# while a != 0:
+#     print(a)
+#     a = a-1
+
+# 6073
+# a = int(input())
+# while a > 0:
+#     a = a-1
+#     print(a)
+
+# 6074
+# a = ord(input())
+# temp = ord('a')
+
+# while temp <= a:
+#     print(chr(temp), end=' ')
+#     temp += 1
+
+# 6075~6
+# a = int(input())
+# for i in range(a+1):
+#     print(i)
+
+# 6077
+# a = int(input())
+# result = 0
+# for i in range(a+1):
+#     if i % 2 == 0:
+#         result += i
+# print(result)
+
+# 6078
+# a = ''
+# while a != 'q':
+#     a = input()
+#     print(a)
+
+# 6079
+# a = int(input())
+# result = 0
+# temp = 0
+# while True:
+#     result += temp
+#     if result >= a:
+#         break
+#     temp += 1
+# print(temp)
+
+# 6080
+# a, b = map(int, input().split())
+# for i in range(1,a+1):
+#     for j in range(1, b+1):
+#         print(i, j)
+
+# 6081
+# temp = input()
+# a = int(temp, 16)
+
+# for i in range(1, 16):
+#     print("%X" % a, "*%X" % i, "=%X" % (a*i), sep='')
+
+# 6082
