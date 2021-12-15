@@ -389,3 +389,65 @@
 #     print("%X" % a, "*%X" % i, "=%X" % (a*i), sep='')
 
 # 6082
+# a = int(input())
+# for i in range(1, a+1):
+#     if i % 10 == 3 or i % 10 == 6 or i % 10 == 9:
+#         print("X", end=' ')
+#     else:
+#         print(i, end=' ')
+
+# 6083
+# a, b, c = map(int, input().split())
+# for i in range(a):
+#     for j in range(b):
+#         for k in range(c):
+#             print(i, j, k)
+# print(a*b*c)
+
+
+# 6084
+# h, b, c, s = map(int, input().split())
+# print(format(h*b*c*s/8/1024/1024, ".1f"), "MB")
+
+# 6085
+# w, h, b = map(int, input().split())
+# print(format(w*h*b/8/1024/1024, ".2f"), "MB")
+
+# 6086
+# a = int(input())
+# temp = 0
+# result = 0
+# while True:
+#     temp += 1
+#     result += temp
+#     if result >= a:
+#         print(result)
+#         break
+
+# 6087
+# a = int(input())
+# for i in range(1, a+1):
+#     if i % 3 == 0:
+#         continue
+#     print(i, end=' ')
+
+# 6088
+# a, d, n = map(int, input().split())
+# print(a+d*(n-1))
+
+# 6089
+# a, r, n = map(int, input().split())
+# print(a*r**(n-1))
+
+# 6090
+# a, m, d, n = map(int, input().split())
+# for _ in range(n-1):
+#     a = a * m + d
+# print(a)
+
+# 6091
+# a, b, c = map(int, input().split())
+# d = 1
+# while d % a != 0 or d % b != 0 or d % c != 0:
+#     d += 1
+# print(d)
