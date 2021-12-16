@@ -451,3 +451,111 @@
 # while d % a != 0 or d % b != 0 or d % c != 0:
 #     d += 1
 # print(d)
+
+# 6092
+# n = int(input())
+# a = list(map(int, input().split()))
+# result = [0] * 23
+
+# for i in range(n):
+#     result[a[i]-1] += 1
+
+# for i in result:
+#     print(i, end=' ')
+
+# 6093
+# n = int(input())
+# a = list(map(int, input().split()))
+
+# for i in a[::-1]:
+#     print(i, end=' ')
+
+# 6094
+# n = int(input())
+# a = list(map(int, input().split()))
+# a.sort()
+# print(a[0])
+
+# 6095
+# result = [[0 for _ in range(19)] for _ in range(19)]
+
+# n = int(input())
+# for _ in range(n):
+#     x, y = map(int, input().split())
+
+#     result[x-1][y-1] = 1
+
+# for i in range(19):
+#     for j in range(19):
+#         print(result[i][j], end=' ')
+#     print()
+
+# 6096
+# result = [list(map(int, input().split())) for _ in range(19)]
+
+# n = int(input())
+
+# for _ in range(n):
+#     x, y = map(int, input().split())
+
+#     for i in range(19):
+#         if result[i][y-1] == 0:
+#             result[i][y-1] = 1
+#         else:
+#             result[i][y-1] = 0
+
+#     for j in range(19):
+#         if result[x-1][j] == 0:
+#             result[x-1][j] = 1
+#         else:
+#             result[x-1][j] = 0
+
+# for i in range(19):
+#     for j in range(19):
+#         print(result[i][j], end=' ')
+#     print()
+
+# 6097
+# h, w = map(int, input().split())
+# result = [[0 for _ in range(w)] for _ in range(h)]
+
+# n = int(input())
+# for _ in range(n):
+#     l, d, x, y = map(int, input().split())
+
+#     for i in range(l):
+#         if d == 0:
+#             result[x-1][y-1+i] = 1
+#         else:
+#             result[x-1+i][y-1] = 1
+
+# for i in range(h):
+#     for j in range(w):
+#         print(result[i][j], end=' ')
+#     print()
+
+# 6098
+# result = [list(map(int, input().split())) for _ in range(10)]
+
+# i=j=1
+
+# while True:
+#     if result[i][j] != 2:
+#         result[i][j] = 9
+        
+#         if result[i][j+1] == 1:
+#             if result[i+1][j] == 1:
+#                 break
+#             else:
+#                 i += 1
+#                 continue
+
+#         j += 1
+#     else:
+#         result[i][j] = 9
+#         break
+
+# for i in range(10):
+#     for j in range(10):
+#         print(result[i][j], end=' ')
+#     print()
