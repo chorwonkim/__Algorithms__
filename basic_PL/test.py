@@ -147,15 +147,85 @@
 # print(result)
 
 # 2884
-h, m = map(int, input().split())
+# h, m = map(int, input().split())
 
-if m < 45:
-    if h <= 0:
-        h += 24
+# if m < 45:
+#     if h <= 0:
+#         h += 24
 
-    h -= 1
-    m += 15
-else:
-    m -= 45
+#     h -= 1
+#     m += 15
+# else:
+#     m -= 45
 
-print(h, m)
+# print(h, m)
+
+# 7567
+# x = input()
+# temp = x[0]
+# result = 10
+# for i in x[1:]:
+#     if temp == '(':
+#         if i == '(':
+#             result += 5
+#         else:
+#             result += 10
+#     else:
+#         if i == '(':
+#             result += 10
+#         else:
+#             result += 5
+
+#     temp = i
+
+# print(result)
+
+# 5063
+# for _ in range(int(input())):
+#     r, e, c = map(int, input().split())
+
+#     if r < e-c:
+#         print("advertise")
+#     elif r == e-c:
+#         print("does not matter")
+#     else:
+#         print("do not advertise")
+
+# 10102
+# V = int(input())
+# vote = [i for i in input() if i == 'A']
+# result = len(vote)
+
+# if V - result > result:
+#     print("B")
+# elif V - result == result:
+#     print("Tie")
+# else:
+#     print("A")
+
+# 10988
+# x = input()
+# x_reverse = x[::-1]
+# result = 1
+# for i in range(len(x)):
+#     if x[i] == x_reverse[i]:
+#         continue
+#     else:
+#         result = 0
+#         break
+
+# print(result)
+
+# 5086
+while True:
+    a, b = map(int, input().split())
+
+    if a == 0 and b == 0:
+        break
+
+    if b % a == 0:
+        print("factor")
+    elif a % b == 0:
+        print("multiple")
+    else:
+        print("neither")
