@@ -217,15 +217,172 @@
 # print(result)
 
 # 5086
-while True:
-    a, b = map(int, input().split())
+# while True:
+#     a, b = map(int, input().split())
 
-    if a == 0 and b == 0:
-        break
+#     if a == 0 and b == 0:
+#         break
 
-    if b % a == 0:
-        print("factor")
-    elif a % b == 0:
-        print("multiple")
-    else:
-        print("neither")
+#     if b % a == 0:
+#         print("factor")
+#     elif a % b == 0:
+#         print("multiple")
+#     else:
+#         print("neither")
+
+# 5717
+# while True:
+#     a, b = map(int, input().split())
+
+#     if a == 0 and b == 0:
+#         break
+
+#     print(a+b)
+
+# 9610
+# q1 = q2 = q3 = q4 = axis = 0
+# for _ in range(int(input())):
+#     a, b = map(int, input().split())
+
+#     if a == 0 or b == 0:
+#         axis += 1
+#     elif a < 0:
+#         if b > 0:
+#             q2 += 1
+#         else:
+#             q3 += 1
+#     else:
+#         if b > 0:
+#             q1 += 1
+#         else:
+#             q4 += 1
+
+# print("Q1:", q1)
+# print("Q2:", q2)
+# print("Q3:", q3)
+# print("Q4:", q4)
+# print("AXIS:", axis)
+
+# 8958
+# for _ in range(int(input())):
+#     x = input()
+#     temp = False
+#     count = result = 0
+
+#     for i in x:
+#         if i == "O":
+#             temp = True
+#             count += 1
+#         else:
+#             count = 0
+
+#         result += count
+
+#     print(result)
+
+# 9506
+# while True:
+#     x = int(input())
+#     result = []
+
+#     if x == -1:
+#         break
+
+#     for i in range(1, x):
+#         if x % i == 0:
+#             result.append(i)
+
+#     if sum(result) == x:
+#         temp = str(x) + " = "
+#         for i in result:
+#             if x // 2 == i:
+#                 temp += str(i)
+#             else:
+#                 temp += (str(i) + " + ")
+#         print(temp)
+#     else:
+#         print("%d is NOT perfect." % x)
+
+# 9506 - others
+# while True:
+#     r = int(input())
+#     if r < 1:
+#         break
+#     n = [i for i in range(1, r) if r % i == 0]
+#     print(r, ['is NOT perfect.', "= " + " + ".join(map(str, n))][sum(n)==r])
+
+# 10162
+# T = int(input())
+# a=b=c=0
+
+# while T:
+#     if T % 10 != 0:
+#         break
+
+#     if T >= 300:
+#         a += 1
+#         T -= 300
+#     elif T >= 60:
+#         b += 1
+#         T -= 60
+#     else:
+#         c += 1
+#         T -= 10
+
+# if T % 10 != 0:
+#     print(-1)
+# else:
+#     print(a, b, c)
+
+# 10103
+# import sys
+# input = sys.stdin.readline
+# x=y=100
+# for _ in range(int(input())):
+#     a, b = map(int, input().split())
+
+#     if a < b:
+#         x -= b
+#     elif a > b:
+#         y -= a
+
+# print('\n'.join([str(x), str(y)]))
+
+# 10214
+# import sys
+# input = sys.stdin.readline
+# for _ in range(int(input())):
+#     y=k=0
+
+#     for _ in range(9):
+#         a, b = map(int, input().split())
+#         y += a
+#         k += b
+
+#     if y > k:
+#         print("Yonsei")
+#     elif y < k:
+#         print("Korea")
+#     else:
+#         print("Draw")
+
+# 1977
+import math
+import sys
+input = sys.stdin.readline
+result = []
+i = 1
+
+M = int(input())
+N = int(input())
+
+while i ** 2 <= N:
+    if i ** 2 >= M:
+        result.append(i**2)
+    i += 1
+
+if not result:
+    print("-1")
+else:
+    print(sum(result))
+    print(result[0])
