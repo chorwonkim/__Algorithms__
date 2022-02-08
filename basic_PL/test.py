@@ -367,22 +367,109 @@
 #         print("Draw")
 
 # 1977
-import math
-import sys
-input = sys.stdin.readline
-result = []
-i = 1
+# import sys
+# input = sys.stdin.readline
+# result = []
+# i = 1
 
-M = int(input())
-N = int(input())
+# M = int(input())
+# N = int(input())
 
-while i ** 2 <= N:
-    if i ** 2 >= M:
-        result.append(i**2)
-    i += 1
+# while i ** 2 <= N:
+#     if i ** 2 >= M:
+#         result.append(i**2)
+#     i += 1
 
-if not result:
-    print("-1")
-else:
-    print(sum(result))
-    print(result[0])
+# if not result:
+#     print("-1")
+# else:
+#     print(sum(result))
+#     print(result[0])
+
+# 11098
+# import sys
+# input = sys.stdin.readline
+# for _ in range(int(input())):
+#     p = int(input())
+#     c, name = 0, ''
+#     for _ in range(p):
+#         temp_c, temp_name = input().split()
+#         temp_c = int(temp_c)
+
+#         if c < temp_c:
+#             c = temp_c
+#             name = temp_name
+
+#     print(name)
+
+# 5635
+# import sys
+# input = sys.stdin.readline
+# min_name, max_name = '', ''
+# min_age, max_age = 1000, 0
+# min_age_month, min_age_day = 1000, 0
+# max_age_month, max_age_day = 1000, 0
+
+# for _  in range(int(input())):
+#     a, b, c, d = input().split()
+#     temp_age = 2011 - int(d)
+#     check_min, check_max = False, False
+
+#     if min_age > temp_age:
+#         check_min = True
+#     elif min_age == temp_age:
+#         if min_age_month > int(c):
+#             check_min = True
+#         elif min_age_month == int(c):
+#             if min_age_day > int(b):
+#                 check_min = True
+
+#     if max_age < temp_age:
+#         check_max = True
+#     elif max_age == temp_age:
+#         if max_age_month > int(c):
+#             check_max = True
+#         elif max_age_month == int(c):
+#             if max_age_day > int(b):
+#                 check_max = True
+
+#     if check_max:
+#         max_age = temp_age
+#         max_age_month = int(c)
+#         max_age_day = int(b)
+#         max_name = a
+
+#     if check_min:
+#         min_age = temp_age
+#         min_age_month = int(c)
+#         min_age_day = int(b)
+#         min_name = a
+
+# print(min_name)
+# print(max_name)
+
+# 1408
+# import sys
+# input = sys.stdin.readline
+# a, b, c = map(int, input().split(':'))
+# d, e, f = map(int, input().split(':'))
+# start = c + b*60 + a*60*60
+# fin = f + e*60 + d*60*60
+# if start > fin:
+#     fin += (24*60*60)
+
+# result = fin-start
+# print("%02d:%02d:%02d" % (result//3600, result%3600//60, result%60))
+
+# 2501
+# n, k = map(int, input().split())
+# result = []
+
+# for i in range(1, n+1):
+#     if n % i == 0:
+#         result.append(i)
+    
+# if len(result) < k:
+#     print(0)
+# else:
+#     print(result[k-1])
