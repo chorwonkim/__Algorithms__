@@ -473,3 +473,63 @@
 #     print(0)
 # else:
 #     print(result[k-1])
+
+# 2609
+# import sys
+# input = sys.stdin.readline
+# a, b = map(int, input().split())
+# x = 1
+# if b < a:
+#     a, b = b, a
+
+# for i in range(2, a+1):
+#     if a % i == 0 and b % i == 0:
+#         x = i
+
+# print(x)
+# print(x * (a//x) * (b//x))
+
+# 2748
+# n = int(input())
+# a, b = 0, 1
+# result = 0
+
+# if n == 1:
+#     result = 1
+# else:
+#     for _ in range(n-1):
+#         result = a+b
+#         a, b = b, result
+
+# print(result)
+
+# 10984
+# import sys
+# input = sys.stdin.readline
+
+# for _ in range(int(input())):
+#     temp, result = 0, 0
+#     for _ in range(int(input())):
+#         a, b = map(float, input().split())
+
+#         temp += a
+#         result += a*b
+
+#     print(int(temp), round(result/temp, 1))
+
+# 10833
+# import sys
+# input = sys.stdin.readline
+# remain = 0
+# for _ in range(int(input())):
+#     student, apple = map(int, input().split())
+
+#     remain += apple % student
+
+# print(remain)
+
+# 2442
+n = int(input())
+
+for i in range(1, n+1):
+    print(' '*(n-i) + '*'*(2*i-1))
