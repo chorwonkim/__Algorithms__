@@ -602,8 +602,67 @@
 #     print(2-v+e)
 
 # 2921
+# n = int(input())
+# result = 0
+# for i in range(1, n+1):
+#     result += ((3*i*(i+1))//2)
+# print(result)
+
+# 2522
+# n = int(input())
+# for i in range(1, n+1):
+#     print(' ' * (n-i) + '*'*(i))
+
+# for i in range(1, n):
+#     print(' ' * i + '*'*(n-i))
+
+# 10871
+# from sys import stdin
+# input = stdin.readline
+# n, x = map(int, input().split())
+# a = list(map(int, input().split()))
+# for i in a:
+#     if i < x:
+#         print(i, end=' ')
+
+# 10872
+# def factorial(n):
+#     if n <= 0:
+#         return 1
+#     else:
+#         return n * factorial(n-1)
+    
+# n = int(input())
+# print(factorial(n))
+
+# 2523
+# n = int(input())
+# for i in range(1, n+1):
+#     print('*'*(i))
+
+# for i in range(1, n):
+#     print('*'*(n-i))
+
+# 2445
+# n = int(input())
+# for i in range(1, n+1):
+#     print('*'*i + ' '*(n-i) + ' '*(n-i) + '*'*i)
+
+# for i in range(1, n):
+#     print('*'*(n-i) + ' '*i + ' '*i + '*'*(n-i))
+
+# 1978
 n = int(input())
-result = 0
-for i in range(1, n+1):
-    result += ((3*i*(i+1))//2)
-print(result)
+x = list(map(int, input().split()))
+
+for i in x:
+    if i == 1:
+        n -= 1
+        continue
+
+    for j in range(2, i):
+        if i % j == 0:
+            n -= 1
+            break
+
+print(n)
