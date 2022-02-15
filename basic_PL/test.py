@@ -652,17 +652,137 @@
 #     print('*'*(n-i) + ' '*i + ' '*i + '*'*(n-i))
 
 # 1978
-n = int(input())
-x = list(map(int, input().split()))
+# n = int(input())
+# x = list(map(int, input().split()))
 
-for i in x:
-    if i == 1:
-        n -= 1
-        continue
+# for i in x:
+#     if i == 1:
+#         n -= 1
+#         continue
 
-    for j in range(2, i):
-        if i % j == 0:
-            n -= 1
-            break
+#     for j in range(2, i):
+#         if i % j == 0:
+#             n -= 1
+#             break
 
-print(n)
+# print(n)
+
+# 2446
+# 오른쪽 공백에 대한 출력 형식 잘못됨 오류 발생
+# n = int(input())
+
+# for i in range(1, n+1):
+#     print(' '*(i-1) + '*'*(2*(n-i)+1))
+
+# for i in range(1, n):
+#     print(' '*(n-i-1) + '*'*(2*i+1))
+
+# 2581
+# m = int(input())
+# n = int(input())
+# result = []
+
+# for i in range(m, n+1):
+#     checker = False
+#     if i == 1:
+#         continue
+
+#     for j in range(2, i):
+#         if i % j == 0:
+#             checker = True
+#             break
+    
+#     if not checker:
+#         result.append(i)
+
+# if len(result) == 0:
+#     print(-1)
+# else:
+#     print(sum(result))
+#     print(result[0])
+
+# 2475
+# temp = list(map(int, input().split()))
+# result = 0
+# for i in temp:
+#     result += i ** 2
+
+# print(result % 10)
+
+# 9085
+# for _ in range(int(input())):
+#     _ = int(input())
+#     temp = sum(list(map(int, input().split())))
+
+#     print(temp)
+
+# 10797
+# date = int(input())
+# cars = list(map(int, input().split()))
+# result = 0
+# for i in cars:
+#     if i % 10 == date:
+#         result += 1
+# print(result)
+
+# 2506
+# input()
+# temp = 0
+# ans = list(input().split())
+# result = 0
+
+# for i in ans:
+#     if i == '0':
+#         checker = False
+#     else:
+#         checker = True
+
+#     if checker:
+#         temp += 1
+#         result += temp
+#     else:
+#         temp = 0
+
+# print(result)
+
+# 2455
+# result = temp = 0
+# for _ in range(4):
+#     a, b = map(int, input().split())
+#     temp = temp + b - a
+#     if result < temp:
+#         result = temp
+# print(result)
+
+# 10995
+# n = int(input())
+
+# for i in range(n):
+#     if i % 2 != 0:
+#         for j in range(2*n):
+#             if j % 2 != 0:
+#                 print('*', end='')
+#             else:
+#                 print(' ', end='')
+#     else:
+#         for j in range(2*n):
+#             if j % 2 != 0:
+#                 print(' ', end='')
+#             else:
+#                 print('*', end='')
+
+#     print()
+
+# 10991
+# n = int(input())
+
+# for i in range(n):
+#     print(' '*(n-i-1), end='')
+
+#     for j in range(2*i+1):
+#         if j % 2 == 0:
+#             print('*', end='')
+#         else:
+#             print(' ', end='')
+
+#     print()
