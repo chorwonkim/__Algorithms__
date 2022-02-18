@@ -786,3 +786,247 @@
 #             print(' ', end='')
 
 #     print()
+
+# 2908
+# a, b = map(str, input().split())
+# a = a[::-1]
+# b = b[::-1]
+# if int(a) > int(b):
+#     print(a)
+# else:
+#     print(b)
+
+# 2460
+# temp = result = 0
+# for _ in range(10):
+#     a, b = map(int, input().split())
+#     temp = temp + b - a
+
+#     if result < temp:
+#         result = temp
+# print(result)
+
+# 2577
+# a = int(input())
+# b = int(input())
+# c = int(input())
+# temp = str(a*b*c)
+# result = [0] * 10
+# for i in temp:
+#     result[int(i)] += 1
+
+# for i in result:
+#     print(i)
+
+# 2592
+# result = dict()
+# temp = 0
+# for i in range(10):
+#     x = int(input())
+#     temp += x
+#     if x not in result.keys():
+#         result[x] = 1
+#     else:
+#         result[x] += 1
+# print(temp//10)
+# x = [i for i, j in result.items() if j == max(result.values())]
+# print(x[0])
+
+# 2711
+# for _ in range(int(input())):
+#     a, b = input().split()
+#     temp = list(b)
+#     temp.pop(int(a)-1)
+#     print(''.join(temp))
+
+# 2953
+# result = count = 0
+# for i in range(5):
+#     temp = 0
+#     x = list(input().split())
+#     for j in x:
+#         temp += int(j)
+#     if result < temp:
+#         count = i+1
+#         result = temp
+# print(count, result)
+
+# 1292 -1
+# a, b = map(int, input().split())
+# seq = []
+# for i in range(1, 46):
+#     for j in range(i):
+#         seq.append(i)
+# print(sum(seq[a-1:b]))
+
+# 1292 -2 - 처음부터 하나씩 더해가는 방법...
+# def easy(n):
+#     s = 0
+#     num, cnt = 1, 1
+#     while True:
+#         for _ in range(num):
+#             if cnt == n+1:
+#                 break
+#             s += num
+#             cnt += 1
+#         num += 1
+#         if cnt == n+1:
+#             break
+#     return s
+
+# a, b = map(int, input().split())
+# print(easy(b) - easy(a-1))
+
+# 3052
+# result = set()
+# for _ in range(10):
+#     a = int(input())
+#     result.add(a % 42)
+# print(len(result))
+
+# 3460
+# for _ in range(int(input())):
+#     n = int(input())
+#     result = []
+
+#     while True:
+#         if n < 2:
+#             result.append(n)
+#             break
+        
+#         result.append(n % 2)
+#         n = n // 2
+    
+#     for i in range(len(result)):
+#         if result[i] == 1:
+#             print(i, end=' ')
+
+# 10807
+# from sys import stdin
+# input = stdin.readline
+# _ = int(input())
+# x = list(input().split())
+# v = input().rstrip()  # 문자열 비교시 개행문자 포함되서 실제 비교시 다르다고 나옴
+# result = 0
+# for i in x:
+#     if i == v:
+#         result += 1
+# print(result)
+
+# 10818 - 1
+# from sys import stdin
+# input = stdin.readline
+# input()
+# x = list(map(int, input().split()))
+# print(min(x), max(x))
+
+# 10818 - 2 # short time ; 채점 도구에서 동작하는 것 같음
+# from sys import stdin
+# _, *arr = map(int, stdin.read().split())
+# print(min(arr), max(arr))
+
+# 5054
+# from sys import stdin
+# input = stdin.readline
+# for _ in range(int(input())):
+#     input()
+#     arr = list(map(int, input().split()))
+#     arr.sort()
+#     result = 0
+#     for i in arr:
+#         if result == 0:
+#             result = i
+#         else:
+#             result += (i-result)
+#     result += (arr[-1] - arr[0] * 2)
+#     print(result)
+
+# 2822 // I think this code is not clean
+# result = []
+# for i in range(1, 9):
+#     result.append((int(input()), i))
+# result.sort()
+# temp = 0
+# x = []
+# for i, j in result[3:]:
+#     temp += i
+#     x.append(j)
+# print(temp)
+# for j in sorted(x):
+#     print(j, end=' ')
+
+# 2822 - Reference
+# quizs = [int(input()) for i in range(8)]
+# result = []
+# temp = 0
+# for i in sorted(quizs, reverse=True)[:5]:
+#     result.append(quizs.index(i))
+#     temp += i
+# print(temp)
+# for i in sorted(result):
+#     print(i+1, end=' ')
+
+# 2750
+# x = sorted([int(input()) for _ in range(int(input()))])
+# for i in x:
+#     print(i)
+
+# 2752
+# n = list(map(int, input().split()))
+# for i in sorted(n):
+#     print(i, end=' ')
+
+# 5543
+# ham = 2001
+# drink = 2001
+# for _ in range(3):
+#     temp = int(input())
+#     if temp < ham:
+#         ham = temp
+# for _ in range(2):
+#     temp = int(input())
+#     if temp < drink:
+#         drink = temp
+# print(ham+drink-50)
+
+# 2587
+# x = [int(input()) for _ in range(5)]
+# print(sum(x)//5)
+# print(sorted(x)[2])
+
+# 1427
+# x = list(input())
+# print(''.join(sorted(x, reverse=True)))
+
+# 2309  // using combinations
+# from itertools import combinations
+# x = [int(input()) for _ in range(9)]
+# comb = list(combinations(x, 7))
+
+# for i in comb:
+#     temp = 0
+#     for j in i:
+#         temp += j
+#     if temp == 100:
+#         for j in sorted(i):
+#             print(j)
+#         break
+
+# 2309  // not combinations
+# x = sorted(int(input()) for _ in range(9))
+# for i in x:
+#     for j in x:
+#         if i+j == sum(x)-100:
+#             x.remove(i)
+#             x.remove(j)
+#             break
+# for i in x:
+#     print(i)
+
+# 9076
+# for _ in range(int(input())):
+#     x = sorted(list(map(int, input().split())))
+#     if x[3]-x[1] >= 4:
+#         print("KIN")
+#     else:
+#         print(sum(x[1:4]))
