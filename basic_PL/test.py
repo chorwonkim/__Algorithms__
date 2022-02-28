@@ -1030,3 +1030,119 @@
 #         print("KIN")
 #     else:
 #         print(sum(x[1:4]))
+
+# 2902
+# x = input().split('-')
+# for i in x:
+#     print(i[0], end='')
+
+# 5800
+# for i in range(int(input())):
+#     k, *x = map(int, input().split())
+#     temp = 0
+#     x = sorted(x)
+#     for p in range(len(x)-1):
+#         if x[p+1] - x[p] > temp:
+#             temp = x[p+1] - x[p]
+#     print("Class %d" %(i+1))
+#     print("Max %d, Min %d, Largest gap %d" % (x[-1], x[0], temp))
+
+# 11047
+# from sys import stdin
+# input = stdin.readline
+# n, k = map(int, input().split())
+# coins = []
+# for _ in range(n):
+#     coins.append(int(input()))
+
+# count = 0
+# while k != 0:
+#     if coins[-1] > k:
+#         coins.pop()
+#         continue
+#     else:
+#         count += (k // coins[-1])
+#         k = (k % coins[-1])
+
+# print(count)
+
+# 1357
+# x, y = input().split()
+# x, y = x[::-1], y[::-1]
+# print(int(str(int(x)+int(y))[::-1]))
+
+# 10987
+# x = input()
+# # temp = ['a','e','i','o','u']
+# temp = 'aeiou' # 굳이 리스트로 만들어서 사용할 필요 없음
+# count = 0
+# for i in x:
+#     if i in temp:
+#         count += 1
+# print(count)
+
+# 4458
+# for _ in range(int(input())):
+#     # Capitalize 쓰면 맨 앞글자만 대문자, 나머지 소문자로 망함
+#     # Title은 And, of와 같은 접속사, 전치사도 대문자로 만들기에 망함
+#     x = str(input())
+#     x = x[0].upper() + x[1:]
+#     print(x)
+
+# 11654
+# print(ord(input()))
+
+# 11720
+# input()
+# print(sum(list(map(int, input()))))
+
+# 11721
+# x = input()
+# for i in range(len(x)//10+1):
+#     print(x[i*10:i*10+10])
+
+# 10821
+# print(len(input().split(',')))
+
+# 10808
+# s = input()
+# result = [0 for _ in range(26)]
+# for i in s:
+#     result[ord(i)-97] += 1
+# for i in result:
+#     print(i, end=' ')
+
+# s = input()
+# result = [0 for _ in range(26)]  # 갯수 조심!!!
+# for i in s:
+#     result[ord(i)-97] += 1
+# print(' '.join(map(str, result)))
+
+# 1157
+# 1. dictionary - slow
+# result = dict()
+# string = input().lower()
+# for i in string:
+#     if i in result:
+#         result[i] += 1
+#     else:
+#         result[i] = 1
+# x = list(result.values())
+# if x.count(max(x)) >= 2:
+#     print('?')
+# else:
+#     for key, value in result.items():
+#         if value == max(x):
+#             print(key.upper())
+
+# 2. fast method
+n = input().upper()
+temp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+result = []
+for i in temp:
+    result.append(n.count(i))
+
+if  result.count(max(result)) > 1:
+    print("?")
+else:
+    print(temp[result.index(max(result))])
