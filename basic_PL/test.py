@@ -1118,8 +1118,7 @@
 #     result[ord(i)-97] += 1
 # print(' '.join(map(str, result)))
 
-# 1157
-# 1. dictionary - slow
+# 1157 1. dictionary - slow
 # result = dict()
 # string = input().lower()
 # for i in string:
@@ -1135,14 +1134,84 @@
 #         if value == max(x):
 #             print(key.upper())
 
-# 2. fast method
-n = input().upper()
-temp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-result = []
-for i in temp:
-    result.append(n.count(i))
+# 1157 2. fast method
+# n = input().upper()
+# temp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# result = []
+# for i in temp:
+#     result.append(n.count(i))
 
-if  result.count(max(result)) > 1:
-    print("?")
-else:
-    print(temp[result.index(max(result))])
+# if  result.count(max(result)) > 1:
+#     print("?")
+# else:
+#     print(temp[result.index(max(result))])
+
+# 9086
+# for _ in range(int(input())):
+#     x = input()
+#     print(x[0] + x[-1])
+
+# 5218
+# for _ in range(int(input())):
+#     a, b = input().split()
+#     print("Distances:", end='')
+#     for i in range(len(a)):
+#         x, y = ord(a[i]), ord(b[i])
+#         if y >= x:
+#             print(" %d" % (y-x), end='')
+#         else:
+#             print(" %d" % (y+26-x), end='')
+#     print()
+
+# 11365
+# while True:
+#     x = input()
+
+#     if x == "END":
+#         break
+#     else:
+#         print(x[::-1])
+
+# 11170 1. 숫자 입력 받은 후 하나하나 세는 방법
+# for _ in range(int(input())):
+#     n, m = map(int, input().split())
+#     count = 0
+#     for i in range(n, m+1):
+#         for j in str(i):
+#             if j == '0':
+#                 count += 1
+#     print(count)
+
+# 11170 2. 아예 처음부터 모든 종류에 대해서 입력
+# result = [1] # 0일때는 1개
+# for i in range(1, 1000001):
+#     result.append(result[-1] + str(i).count('0')) # 이전 숫자까지의 0의 개수에 현재 수 추가
+# result.append(0)
+# for _ in range(int(input())):
+#     a, b = map(int, input().split())
+#     print(result[b] - result[a-1])
+
+# 11665
+# x = list(input())
+# result = ""
+# for i in x:
+#     if 'A' <= i <= 'Z':
+#         if ord(i) + 13 > 90:
+#             result += chr(ord(i)-13)
+#         else:
+#             result += chr(ord(i)+13)
+#     elif 'a' <= i <= 'z':
+#         if ord(i) + 13 > 122:
+#             result += chr(ord(i)-13)
+#         else:
+#             result += chr(ord(i)+13)
+#     else:
+#         result += i
+# print(result)
+
+def double_in(n):
+    n = n * 2
+
+x = 10
+double_in(x)
+print(x)
