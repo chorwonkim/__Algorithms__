@@ -240,20 +240,26 @@
 #     result += array[i] * n
 # print(result)
 
-n = int(input())
-result = n
-count = 0
-while True:
-    a = n // 10
-    b = n % 10
+# 12-1 (boj 18406)
 
-    if a+b >= 10:
-        temp = a+b-10
-    else:
-        temp = a+b
+# 12-2
+# middle = []
+# numbers = []
+# for i in list(input()):
+#     if 65 <= ord(i) <= 90:
+#         middle.append(i)
+#     else:
+#         numbers.append(int(i))
+# print(''.join(sorted(middle)) + ''.join(str(sum(numbers))))
 
-    n = b*10 + temp
-    count += 1
-    if result == n:
-        break
-print(count)
+# 12-3 (programmers 문자열 압축, 60057)
+# s = list(input())
+s = [3,4,5,1,23,4,5,6,7,8,9]
+for i in range(len(s)):
+    for j in range(i+1, len(s)):
+        if s[i] < s[j]:
+            s[i], s[j] = s[j], s[i]
+
+        print(s)
+
+    
