@@ -1208,10 +1208,3 @@
 #     else:
 #         result += i
 # print(result)
-
-def double_in(n):
-    n = n * 2
-
-x = 10
-double_in(x)
-print(x)

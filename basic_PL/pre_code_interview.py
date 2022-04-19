@@ -176,11 +176,84 @@
 # print(result)
 
 # 11-2
-s = list(map(int, input()))
-result = 0
-for i in s:
-    if i <= 1 or result <= 1:
-        result += i
+# s = list(map(int, input()))
+# result = 0
+# for i in s:
+#     if i <= 1 or result <= 1:
+#         result += i
+#     else:
+#         result *= i
+# print(result)
+
+# 11-3
+# s = list(input())
+# count_1 = count_0 = 0
+# if s[0] == '0':
+#     count_0 += 1
+# else:
+#     count_1 += 1
+#
+# for i in range(1, len(s)-1):
+#     if s[i+1] != s[i]:
+#         if s[i+1] == '0':
+#             count_0 += 1
+#         else:
+#             count_1 += 1
+#
+# print(min(count_0, count_1))
+
+# 11-4
+# n = int(input())
+# coins = list(map(int, input().split()))
+# coins.sort()
+#
+# target = 1
+# for i in coins:
+#     if target < i:
+#         break
+#
+#     target += i
+# print(target)
+
+# 11-5 -1
+# n, m = map(int, input().split())
+# balls = list(map(int, input().split()))
+# result = 0
+#
+# for i in range(n):
+#     for j in range(i, n):
+#         if balls[j] != balls[i]:
+#             result += 1
+# print(result)
+
+# 11-5 -2
+# n, m = map(int, input().split())
+# balls = list(map(int, input().split()))
+# array = [0] * (m+1)
+#
+# for i in balls:
+#     array[i] += 1
+#
+# result = 0
+# for i in range(1, m+1):
+#     n -= array[i]
+#     result += array[i] * n
+# print(result)
+
+n = int(input())
+result = n
+count = 0
+while True:
+    a = n // 10
+    b = n % 10
+
+    if a+b >= 10:
+        temp = a+b-10
     else:
-        result *= i
-print(result)
+        temp = a+b
+
+    n = b*10 + temp
+    count += 1
+    if result == n:
+        break
+print(count)
