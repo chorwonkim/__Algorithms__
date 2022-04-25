@@ -253,13 +253,113 @@
 # print(''.join(sorted(middle)) + ''.join(str(sum(numbers))))
 
 # 12-3 (programmers 문자열 압축, 60057)
-# s = list(input())
-s = [3,4,5,1,23,4,5,6,7,8,9]
-for i in range(len(s)):
-    for j in range(i+1, len(s)):
-        if s[i] < s[j]:
-            s[i], s[j] = s[j], s[i]
+# s = input()
+# result = []
+# if len(s) == 1:
+#     result.append(1)
+#
+# for i in range(1, (len(s) // 2)+1):
+#     b = ''
+#     count = 1
+#     temp = s[:i]
+#
+#     for j in range(i, len(s), i):
+#         if temp == s[j:i+j]:
+#             count += 1
+#         else:
+#             if count != 1:
+#                 b = b + str(count) + temp
+#             else:
+#                 b = b + temp
+#             temp = s[j:j+i]
+#             count = 1
+#
+#     if count != 1:
+#         b = b + str(count) + temp
+#     else:
+#         b = b + temp
+#
+#     result.append(len(b))
+#
+# print(min(result))
 
-        print(s)
+# 12-4 (programmers 자물쇠와 열쇠, 60059)
+key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
+lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
 
-    
+# temp = [[0]*key_length for _ in range(key_length)]
+# # # 90도 회전
+# # for i in range(key_length):
+# #     for j in range(key_length):
+# #         temp[j][key_length-1-i] = key[i][j]
+#
+# # # 180도 회전
+# # for i in range(key_length):
+# #     for j in range(key_length):
+# #         temp[key_length-1-i][key_length-1-j] = key[i][j]
+#
+# # # 270도 회전
+# # for i in range(key_length):
+# #     for j in range(key_length):
+# #         temp[key_length-1-j][i] = key[i][j]
+# print(temp)
+
+def rotate(key, d):
+    n = len(key)
+    temp = [[0]*n for _ in range(n)]
+
+    if d % 4 == 1:
+        for i in range(n):
+            for j in range(n):
+                temp[j][n-1-i] = key[i][j]
+    elif d % 4 == 2:
+        for i in range(n):
+            for j in range(n):
+                temp[n-1-i][n-1-j] = key[i][j]
+    elif d % 4 == 3:
+        for i in range(n):
+            for j in range(n):
+                temp[n-1-j][i] = key[i][j]
+    else:
+        for i in range(n):
+            for j in range(n):
+                temp[i][j] = key[i][j]
+
+    return temp
+
+def check(append_lock):
+    n = len(append_lock) // 3
+    for i in range(n, n*2):
+        for j in range(n, n*2):
+            if append_lock[i][j] != 1:
+                return False
+    return True
+
+def solution(key, lock):
+    key_length = len(key)
+    lock_length = len(lock)
+
+    append_lock = [[0] * lock_length * 3 for _ in range(lock_length * 3)]
+    for i in range(lock_length):
+        for j in range(lock_length):
+            append_lock[lock_length + i][lock_length + j] = lock[i][j]
+
+    for i in range(lock_length * 2):
+        for j in range(lock_length * 2):
+            for d in range(4):
+                rotate_key = rotate(key, d)
+
+                for x in range(key_length):
+                    for y in range(key_length):
+                        append_lock[i + x][j + y] += rotate_key[x][y]
+
+                if check(append_lock):
+                    return True
+
+                for x in range(key_length):
+                    for y in range(key_length):
+                        append_lock[i + x][j + y] -= rotate_key[x][y]
+
+    return False
+
+print(solution(key, lock))
