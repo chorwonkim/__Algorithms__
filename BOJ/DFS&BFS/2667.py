@@ -45,3 +45,59 @@ for item in result:
 numbers.sort()
 for item in numbers:
     print(item)
+
+## BFS
+# from collections import deque
+
+# n = int(input())
+
+# graph = []
+# for _ in range(n):
+#     graph.append(list(map(int, input())))
+    
+# dx = [-1,1,0,0]
+# dy = [0,0,-1,1]
+    
+# def bfs(x, y, count):
+#     queue = deque()
+#     queue.append((x, y))
+#     graph[x][y] = count
+#     temp = 0
+    
+#     while queue:
+#         x, y = queue.popleft()
+        
+#         for i in range(4):
+#             nx = x + dx[i]
+#             ny = y + dy[i]
+            
+#             if nx < 0 or nx >= n or ny < 0 or ny >= n:
+#                 continue
+                
+#             if graph[nx][ny] == 0:
+#                 continue
+                
+#             if graph[nx][ny] == 1:
+#                 graph[nx][ny] = count
+#                 queue.append((nx, ny))
+                
+#     for i in range(n):
+#         for j in range(n):
+#             if graph[i][j] == count:
+#                 temp += 1
+    
+#     return temp
+                
+# result = []
+# count = 2
+
+# for i in range(n):
+#     for j in range(n):
+#         if graph[i][j] == 1:
+#             result.append(bfs(i, j, count))
+#             count += 1
+
+# print(len(result))
+# result.sort()
+# for i in result:
+#     print(i)
