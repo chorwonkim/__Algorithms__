@@ -1208,3 +1208,36 @@
 #     else:
 #         result += i
 # print(result)
+
+# Combinations not itertools
+def combination(arr, n):
+    result = []
+    if n == 0:
+        return [[]]
+
+    for i in range(len(arr)):
+        temp = arr[i]
+        for rest in combination(arr[i+1:], n-1):
+            result.append([temp] + rest)
+
+    return result
+
+print(combination([0,1,2,3], 2))
+
+
+# Permutation not itertools
+
+def permutation(arr, n):
+    result = []
+
+    if n == 0:
+        return [[]]
+
+    for i in range(len(arr)):
+        temp = arr[i]
+        for rest in permutation(arr[:i] + arr[i+1:], n-1):
+            result.append([temp] + rest)
+
+    return result
+
+print(permutation([0,1,2,3], 3))
