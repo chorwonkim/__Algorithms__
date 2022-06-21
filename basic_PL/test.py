@@ -1209,35 +1209,102 @@
 #         result += i
 # print(result)
 
-# Combinations not itertools
-def combination(arr, n):
-    result = []
-    if n == 0:
-        return [[]]
+# # Combinations not itertools
+# def combination(arr, n):
+#     result = []
+#     if n == 0:
+#         return [[]]
 
-    for i in range(len(arr)):
-        temp = arr[i]
-        for rest in combination(arr[i+1:], n-1):
-            result.append([temp] + rest)
+#     for i in range(len(arr)):
+#         temp = arr[i]
+#         for rest in combination(arr[i+1:], n-1):
+#             result.append([temp] + rest)
 
-    return result
+#     return result
 
-print(combination([0,1,2,3], 2))
+# print(combination([0,1,2,3], 2))
 
 
-# Permutation not itertools
+# # Permutation not itertools
+# def permutation(arr, n):
+#     result = []
 
-def permutation(arr, n):
-    result = []
+#     if n == 0:
+#         return [[]]
 
-    if n == 0:
-        return [[]]
+#     for i in range(len(arr)):
+#         temp = arr[i]
+#         for rest in permutation(arr[:i] + arr[i+1:], n-1):
+#             result.append([temp] + rest)
 
-    for i in range(len(arr)):
-        temp = arr[i]
-        for rest in permutation(arr[:i] + arr[i+1:], n-1):
-            result.append([temp] + rest)
+#     return result
 
-    return result
+# print(permutation([0,1,2,3], 3))
 
-print(permutation([0,1,2,3], 3))
+# def binary_search(array, target, start, end):
+#     if start > end:
+#         return None
+
+#     mid = (start+end) // 2
+
+#     if array[mid] == target:
+#         return mid
+#     elif array[mid] > target:
+#         return binary_search(array, target, start, mid-1)
+#     else:
+#         return binary_search(array, target, mid+1, end)
+
+# def binary_search(array, target, start, end):
+#     while start <= end:
+#         mid = (start+end) // 2
+
+#         if array[mid] == target:
+#             return mid
+#         elif array[mid] > target:
+#             end = mid-1
+#         else:
+#             start = mid+1
+
+#     return None
+
+# n, m = map(int, input().split())
+# rices = list(map(int, input().split()))
+# rices.sort()
+
+# start = 0
+# end = max(rices)
+
+# result = 0
+# while start <= end:
+#     total = 0
+#     mid = (start+end) // 2
+
+#     for x in rices:
+#         if x > mid:
+#             total += (x-mid)
+
+#     if total < m:
+#         end = mid-1
+#     else:
+#         result = mid
+#         start = mid+1
+
+# print(result)
+
+n = int(input())
+numbers = list(map(int, input().split()))
+
+start, end = 0, len(numbers)
+result = -1
+while start <= end:
+    mid = (start + end) // 2
+
+    if numbers[mid] == mid:
+        result = mid
+        break
+    elif numbers[mid] >= mid:
+        end = mid-1
+    else:
+        start = mid+1
+
+print(result)
