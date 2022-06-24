@@ -23,5 +23,3 @@ for i in list(map(int, Read().split())):
         print(1)
     else:
         print(0)
-
-    

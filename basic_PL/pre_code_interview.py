@@ -284,8 +284,8 @@
 # print(min(result))
 
 # 12-4 (programmers 자물쇠와 열쇠, 60059)
-key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
-lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
+# key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
+# lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
 
 # temp = [[0]*key_length for _ in range(key_length)]
 # # # 90도 회전
@@ -304,62 +304,64 @@ lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
 # #         temp[key_length-1-j][i] = key[i][j]
 # print(temp)
 
-def rotate(key, d):
-    n = len(key)
-    temp = [[0]*n for _ in range(n)]
+# def rotate(key, d):
+#     n = len(key)
+#     temp = [[0]*n for _ in range(n)]
 
-    if d % 4 == 1:
-        for i in range(n):
-            for j in range(n):
-                temp[j][n-1-i] = key[i][j]
-    elif d % 4 == 2:
-        for i in range(n):
-            for j in range(n):
-                temp[n-1-i][n-1-j] = key[i][j]
-    elif d % 4 == 3:
-        for i in range(n):
-            for j in range(n):
-                temp[n-1-j][i] = key[i][j]
-    else:
-        for i in range(n):
-            for j in range(n):
-                temp[i][j] = key[i][j]
+#     if d % 4 == 1:
+#         for i in range(n):
+#             for j in range(n):
+#                 temp[j][n-1-i] = key[i][j]
+#     elif d % 4 == 2:
+#         for i in range(n):
+#             for j in range(n):
+#                 temp[n-1-i][n-1-j] = key[i][j]
+#     elif d % 4 == 3:
+#         for i in range(n):
+#             for j in range(n):
+#                 temp[n-1-j][i] = key[i][j]
+#     else:
+#         for i in range(n):
+#             for j in range(n):
+#                 temp[i][j] = key[i][j]
 
-    return temp
+#     return temp
 
-def check(append_lock):
-    n = len(append_lock) // 3
-    for i in range(n, n*2):
-        for j in range(n, n*2):
-            if append_lock[i][j] != 1:
-                return False
-    return True
+# def check(append_lock):
+#     n = len(append_lock) // 3
+#     for i in range(n, n*2):
+#         for j in range(n, n*2):
+#             if append_lock[i][j] != 1:
+#                 return False
+#     return True
 
-def solution(key, lock):
-    key_length = len(key)
-    lock_length = len(lock)
+# def solution(key, lock):
+#     key_length = len(key)
+#     lock_length = len(lock)
 
-    append_lock = [[0] * lock_length * 3 for _ in range(lock_length * 3)]
-    for i in range(lock_length):
-        for j in range(lock_length):
-            append_lock[lock_length + i][lock_length + j] = lock[i][j]
+#     append_lock = [[0] * lock_length * 3 for _ in range(lock_length * 3)]
+#     for i in range(lock_length):
+#         for j in range(lock_length):
+#             append_lock[lock_length + i][lock_length + j] = lock[i][j]
 
-    for i in range(lock_length * 2):
-        for j in range(lock_length * 2):
-            for d in range(4):
-                rotate_key = rotate(key, d)
+#     for i in range(lock_length * 2):
+#         for j in range(lock_length * 2):
+#             for d in range(4):
+#                 rotate_key = rotate(key, d)
 
-                for x in range(key_length):
-                    for y in range(key_length):
-                        append_lock[i + x][j + y] += rotate_key[x][y]
+#                 for x in range(key_length):
+#                     for y in range(key_length):
+#                         append_lock[i + x][j + y] += rotate_key[x][y]
 
-                if check(append_lock):
-                    return True
+#                 if check(append_lock):
+#                     return True
 
-                for x in range(key_length):
-                    for y in range(key_length):
-                        append_lock[i + x][j + y] -= rotate_key[x][y]
+#                 for x in range(key_length):
+#                     for y in range(key_length):
+#                         append_lock[i + x][j + y] -= rotate_key[x][y]
 
-    return False
+#     return False
 
-print(solution(key, lock))
+# print(solution(key, lock))
+
+# 
