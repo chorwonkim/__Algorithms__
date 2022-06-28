@@ -1291,20 +1291,37 @@
 
 # print(result)
 
-n = int(input())
-numbers = list(map(int, input().split()))
+# n = int(input())
+# numbers = list(map(int, input().split()))
 
-start, end = 0, len(numbers)
-result = -1
-while start <= end:
-    mid = (start + end) // 2
+# start, end = 0, len(numbers)
+# result = -1
+# while start <= end:
+#     mid = (start + end) // 2
 
-    if numbers[mid] == mid:
-        result = mid
-        break
-    elif numbers[mid] >= mid:
-        end = mid-1
-    else:
-        start = mid+1
+#     if numbers[mid] == mid:
+#         result = mid
+#         break
+#     elif numbers[mid] >= mid:
+#         end = mid-1
+#     else:
+#         start = mid+1
 
-print(result)
+# print(result)
+
+# Dynamic Programming - Fibonacci Func
+d = [0] * 100
+
+def fibo(x):
+    if x == 1 or x == 2:
+        return 1
+
+    # 이미 계산한 전적이 있는 경우 그대로 반환
+    if d[x] != 0:
+        return d[x]
+
+    d[x] = fibo(x-1) + fibo(x-2)
+
+    return d[x]
+
+print(fibo(99))
