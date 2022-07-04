@@ -397,21 +397,44 @@
 # print(d[n-1])
 
 # 8-5
-n, m = map(int, input().split())
-coins = []
+# n, m = map(int, input().split())
+# coins = []
+#
+# for _ in range(n):
+#     coins.append(int(input()))
+#
+# d = [10001] * (m+1)
+# d[0] = 0
+#
+# for i in range(n):
+#     for j in range(coins[i], m+1):
+#         if d[j-coins[i]] != 10001:
+#             d[j] = min(d[j], d[j-coins[i]]+1)
+#
+# if d[m] == 10001:
+#     print(-1)
+# else:
+#     print(d[m])
 
-for _ in range(n):
-    coins.append(int(input()))
+# 16-1
+t = int(input())
+for _ in range(t):
+    n, m = map(int, input().split())
+    io = list(map(int, input().split()))
+    mines = []
+    for i in range(n):
+        mines.append(io[i * m:i * m + m])
+    d = [[0] * m for _ in range(n + 2)]
 
-d = [10001] * (m+1)
-d[0] = 0
+    for i in range(1, n + 1):
+        d[i][0] = mines[i - 1][0]
 
-for i in range(n):
-    for j in range(coins[i], m+1):
-        if d[j-coins[i]] != 10001:
-            d[j] = min(d[j], d[j-coins[i]]+1)
+    for j in range(1, m):
+        for i in range(1, n + 1):
+            d[i][j] = mines[i - 1][j] + max(d[i - 1][j - 1], d[i][j - 1], d[i + 1][j - 1])
 
-if d[m] == 10001:
-    print(-1)
-else:
-    print(d[m])
+    result = 0
+    for i in range(1, n+1):
+        if result < d[i][m-1]:
+            result = d[i][m-1]
+    print(result)
