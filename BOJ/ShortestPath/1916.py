@@ -3,14 +3,16 @@ from sys import stdin
 Read = stdin.readline
 INF = int(1e9)
 
-n, m = map(int, Read().split())
-start = int(Read())
+n = int(Read())
+m = int(Read())
 graph = [[] for _ in range(n+1)]
 distance = [INF] * (n+1)
 
 for _ in range(m):
     a, b, c = map(int, Read().split())
     graph[a].append((b, c))
+
+start, end = map(int, Read().split())
 
 def dijkstra(start):
     q = []
@@ -19,6 +21,7 @@ def dijkstra(start):
 
     while q:
         dist, now = heapq.heappop(q)
+
         if distance[now] < dist:
             continue
 
@@ -30,8 +33,4 @@ def dijkstra(start):
 
 dijkstra(start)
 
-for i in range(1, n+1):
-    if distance[i] == INF:
-        print("INF")
-    else:
-        print(distance[i])
+print(distance[end])
