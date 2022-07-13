@@ -489,24 +489,118 @@
 #         print(distance[i])
 
 # Reform dijkstra (heapq)
+# import heapq
+# import sys
+# input = sys.stdin.readline
+# INF = int(1e9)
+
+# n, m = map(int, input().split())
+# start = int(input())
+# graph = [[] for _ in range(n+1)]
+# distance = [INF] * (n+1)
+
+# for _ in range(m):
+#     a, b, c = map(int, input().split())
+#     graph[a].append((b, c))
+
+# def dijkstra(start):
+#     q = []
+#     heapq.heappush(q, (0, start))
+#     distance[start] = 0
+#     while q:
+#         dist, now = heapq.heappop(q)
+#         if distance[now] < dist:
+#             continue
+
+#         for i in graph[now]:
+#             cost = dist + i[1]
+#             if cost < distance[i[0]]:
+#                 distance[i[0]] = cost
+#                 heapq.heappush(q, (cost, i[0]))
+
+# dijkstra(start)
+
+# for i in range(1, n+1):
+#     if distance[i] == INF:
+#         print("INFINITY")
+#     else:
+#         print(distance[i])
+
+# Floyd-Warshall Algorithm (O(n^3))
+# INF = int(1e9)
+
+# n = int(input())
+# m = int(input())
+# graph = [[INF] * (n+1) for _ in range(n+1)]
+
+# for a in range(1, n+1):
+#     for b in range(1, n+1):
+#         if a == b:
+#             graph[a][b] = 0
+
+# for _ in range(m):
+#     a, b, c = map(int, input().split())
+#     graph[a][b] = c
+
+# for k in range(1, n+1):
+#     for a in range(1, n+1):
+#         for b in range(1, n+1):
+#             graph[a][b] = min(graph[a][b], graph[a][k]+graph[k][b])
+
+# for i in range(1, n+1):
+#     for j in range(1, n+1):
+#         if graph[i][j] == INF:
+#             print("INFINITY", end=' ')
+#         else:
+#             print(graph[i][j], end=' ')
+#     print()
+
+# 9-2
+# n, m = map(int, input().split())
+# INF = int(1e9)
+# graph = [[INF] * (n+1) for _ in range(n+1)]
+
+# for i in range(1, n+1):
+#     for j in range(1, n+1):
+#         if i == j:
+#             graph[i][j] = 0
+
+# for _ in range(m):
+#     a, b = map(int, input().split())
+#     graph[a][b] = 1
+#     graph[b][a] = 1
+
+# for k in range(1, n+1):
+#     for i in range(1, n+1):
+#         for j in range(1, n+1):
+#             graph[i][j] = min(graph[i][j], graph[i][k]+graph[k][j])
+
+# x, y = map(int, input().split())
+
+# if graph[1][y] + graph[y][x] >= INF:
+#     print(-1)
+# else:
+#     print(graph[1][y] + graph[y][x])
+
+# 9-3
 import heapq
-import sys
-input = sys.stdin.readline
+from sys import stdin
+Read = stdin.readline
 INF = int(1e9)
 
-n, m = map(int, input().split())
-start = int(input())
+n, m, c = map(int, Read().split())
 graph = [[] for _ in range(n+1)]
 distance = [INF] * (n+1)
 
 for _ in range(m):
-    a, b, c = map(int, input().split())
-    graph[a].append((b, c))
+    x, y, z = map(int, Read().split())
+    graph[x].append((y, z))
 
 def dijkstra(start):
     q = []
     heapq.heappush(q, (0, start))
     distance[start] = 0
+
     while q:
         dist, now = heapq.heappop(q)
         if distance[now] < dist:
@@ -518,10 +612,11 @@ def dijkstra(start):
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
 
-dijkstra(start)
+dijkstra(c)
 
+count = 0
 for i in range(1, n+1):
-    if distance[i] == INF:
-        print("INFINITY")
-    else:
-        print(distance[i])
+    if distance[i] != INF and distance[i] != 0:
+        count += 1
+
+print(count, max(distance[1:]))
