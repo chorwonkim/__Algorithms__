@@ -3,18 +3,14 @@ from sys import stdin
 Read = stdin.readline
 INF = int(1e9)
 
-n = int(Read())
-m = int(Read())
+n, m = map(int, Read().split())
 graph = [[] for _ in range(n+1)]
 distance = [INF] * (n+1)
-path = [[] for _ in range(n+1)]
 
 for _ in range(m):
     a, b, c = map(int, Read().split())
     graph[a].append((b, c))
-
-start, end = map(int, Read().split())
-path[start].append(start)
+    graph[b].append((a, c))
 
 def dijkstra(start):
     q = []
@@ -31,14 +27,7 @@ def dijkstra(start):
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
-                # 최단 경로 값이 갱신되었으니, 최단 경로 초기화
-                path[i[0]] = []
-                # 경로에 대해서 저장된 값을 채움
-                for j in path[now]:
-                    path[i[0]].append(j)
-                    print(path)
-                # 경로의 마지막은 항상 목적지
-                path[i[0]].append(i[0])
-                print(path)
 
-dijkstra(start)
+dijkstra(1)
+
+print(distance[n])

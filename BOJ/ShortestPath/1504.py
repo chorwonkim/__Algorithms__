@@ -1,4 +1,5 @@
-# python 시간 초과, pypy3 틀린 상태
+# 1 -> v1 -> v2 -> n 또는 1 -> v2 -> v1 -> n의 두 가지 경우만 구해주면 됨
+# 다익스트라를 굳이 모든 정점에 대해 할 필요 없음
 import heapq
 from sys import stdin
 Read = stdin.readline
@@ -29,11 +30,20 @@ def dijkstra(start):
                 distance[start][i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
 
-for i in range(1, n):
-    dijkstra(i)
-
 v1, v2 = map(int, Read().split())
-result = distance[1][v1] + distance[v1][v2] + distance[v2][n]
+
+dijkstra(1)
+dijkstra(v1)
+dijkstra(v2)
+
+result_1 = distance[1][v1] + distance[v1][v2] + distance[v2][n]
+result_2 = distance[1][v2] + distance[v2][v1] + distance[v1][n]
+result = 0
+if result_1 < result_2:
+    result = result_1
+else:
+    result = result_2
+
 if result >= INF:
     print(-1)
 else:
