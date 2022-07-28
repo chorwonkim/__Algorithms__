@@ -583,40 +583,152 @@
 #     print(graph[1][y] + graph[y][x])
 
 # 9-3
-import heapq
-from sys import stdin
-Read = stdin.readline
-INF = int(1e9)
+# import heapq
+# from sys import stdin
+# Read = stdin.readline
+# INF = int(1e9)
 
-n, m, c = map(int, Read().split())
-graph = [[] for _ in range(n+1)]
-distance = [INF] * (n+1)
+# n, m, c = map(int, Read().split())
+# graph = [[] for _ in range(n+1)]
+# distance = [INF] * (n+1)
 
-for _ in range(m):
-    x, y, z = map(int, Read().split())
-    graph[x].append((y, z))
+# for _ in range(m):
+#     x, y, z = map(int, Read().split())
+#     graph[x].append((y, z))
 
-def dijkstra(start):
-    q = []
-    heapq.heappush(q, (0, start))
-    distance[start] = 0
+# def dijkstra(start):
+#     q = []
+#     heapq.heappush(q, (0, start))
+#     distance[start] = 0
 
-    while q:
-        dist, now = heapq.heappop(q)
-        if distance[now] < dist:
-            continue
+#     while q:
+#         dist, now = heapq.heappop(q)
+#         if distance[now] < dist:
+#             continue
 
-        for i in graph[now]:
-            cost = dist + i[1]
-            if cost < distance[i[0]]:
-                distance[i[0]] = cost
-                heapq.heappush(q, (cost, i[0]))
+#         for i in graph[now]:
+#             cost = dist + i[1]
+#             if cost < distance[i[0]]:
+#                 distance[i[0]] = cost
+#                 heapq.heappush(q, (cost, i[0]))
 
-dijkstra(c)
+# dijkstra(c)
 
-count = 0
-for i in range(1, n+1):
-    if distance[i] != INF and distance[i] != 0:
-        count += 1
+# count = 0
+# for i in range(1, n+1):
+#     if distance[i] != INF and distance[i] != 0:
+#         count += 1
 
-print(count, max(distance[1:]))
+# print(count, max(distance[1:]))
+
+# disjoint-set basic
+# def find_parent(parent, x):
+#     if parent[x] != x:
+#         return find_parent(parent, parent[x])
+    
+#     return x
+
+# def find_parent(parent, x):
+#     if parent[x] != x:
+#         parent[x] = find_parent(parent, parent[x])
+
+#     return parent[x]
+
+# def union_parent(parent, a, b):
+#     a = find_parent(parent, a)
+#     b = find_parent(parent, b)
+
+#     if a < b:
+#         parent[b] = a
+#     else:
+#         parent[a] = b
+
+# v, e = map(int, input().split())
+# parent = [0] * (v+1)
+
+# for i in range(1, v+1):
+#     parent[i] = i
+
+# for i in range(e):
+#     a, b = map(int, input().split())
+#     union_parent(parent, a, b)
+
+# print("각 원소가 속한 집합: ", end=' ')
+# for i in range(1, v+1):
+#     print(find_parent(parent, i), end=' ')
+
+# print()
+
+# print("부모 테이블: ", end=' ')
+# for i in range(1, v+1):
+#     print(parent[i], end=' ')
+
+# Check cycle inm Disjoint Set
+# def find_parent(parent, x):
+#     if parent[x] != x:
+#         parent[x] = find_parent(parent, parent[x])
+
+#     return parent[x]
+
+# def union_parent(parent, a, b):
+#     a = find_parent(parent, a)
+#     b = find_parent(parent, b)
+
+#     if a < b:
+#         parent[b] = a
+#     else:
+#         parent[a] = b
+
+# v, e = map(int, input().split())
+# parent = [0] * (v+1)
+
+# for i in range(1, v+1):
+#     parent[i] = i
+
+# cycle = False
+
+# for i in range(e):
+#     a, b = map(int, input().split())
+#     if find_parent(parent, a) == find_parent(parent, b):
+#         cycle = True
+#         break
+#     else:
+#         union_parent(parent, a, b)
+
+# if cycle:
+#     print("cycle")
+# else:
+#     print("not cycle")
+
+# 10-2
+def find_parent(parent, x):
+    if parent[x] != x:
+        parent[x] = find_parent(parent, parent[x])
+
+    return parent[x]
+
+def union_parent(parent, a, b):
+    a = find_parent(parent, a)
+    b = find_parent(parent, b)
+
+    if a < b:
+        parent[b] = a
+    else:
+        parent[a] = b
+
+n, m = map(int, input().split())
+parent = [0] * (n+1)
+
+for i in range(n+1):
+    parent[i] = i
+
+for i in range(m):
+    check, a, b = map(int, input().split())
+
+    if check == 0:
+        union_parent(parent, a, b)
+    elif check == 1:
+        if find_parent(parent, a) == find_parent(parent, b):
+            print("YES")
+        else:
+            print("NO")
