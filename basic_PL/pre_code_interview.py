@@ -700,7 +700,82 @@
 # else:
 #     print("not cycle")
 
+# kruskal Algorithm
+# def find_parent(parent, x):
+#     if parent[x] != x:
+#         parent[x] = find_parent(parent, parent[x])
+
+#     return parent[x]
+
+# def union_parent(parent, a, b):
+#     a = find_parent(parent, a)
+#     b = find_parent(parent, b)
+
+#     if a < b:
+#         parent[b] = a
+#     else:
+#         parent[a] = b
+
+# v, e = map(int, input().split())
+# parent = [0] * (v+1)
+
+# edges = []
+# result = 0
+
+# for i in range(1, v+1):
+#     parent[i] = i
+
+# for _ in range(e):
+#     a, b, cost = map(int, input().split())
+#     edges.append((cost, a, b))
+
+# edges.sort()
+
+# for edge in edges:
+#     cost, a, b = edge
+#     if find_parent(parent, a) != find_parent(parent, b):
+#         union_parent(parent, a, b)
+#         result += cost
+
+# print(result)
+
 # 10-2
+# def find_parent(parent, x):
+#     if parent[x] != x:
+#         parent[x] = find_parent(parent, parent[x])
+
+#     return parent[x]
+
+# def union_parent(parent, a, b):
+#     a = find_parent(parent, a)
+#     b = find_parent(parent, b)
+
+#     if a < b:
+#         parent[b] = a
+#     else:
+#         parent[a] = b
+
+# n, m = map(int, input().split())
+# parent = [0] * (n+1)
+
+# for i in range(n+1):
+#     parent[i] = i
+
+# for i in range(m):
+#     check, a, b = map(int, input().split())
+
+#     if check == 0:
+#         union_parent(parent, a, b)
+#     elif check == 1:
+#         if find_parent(parent, a) == find_parent(parent, b):
+#             print("YES")
+#         else:
+#             print("NO")
+
+# 10-3
+from sys import stdin
+Read = stdin.readline
+
 def find_parent(parent, x):
     if parent[x] != x:
         parent[x] = find_parent(parent, parent[x])
@@ -716,19 +791,28 @@ def union_parent(parent, a, b):
     else:
         parent[a] = b
 
-n, m = map(int, input().split())
+n, m = map(int, Read().split())
 parent = [0] * (n+1)
 
-for i in range(n+1):
+edges = []
+result = 0
+last = 0
+
+for i in range(1, n+1):
     parent[i] = i
 
-for i in range(m):
-    check, a, b = map(int, input().split())
+for _ in range(m):
+    a, b, c = map(int, Read().split())
+    edges.append((c, a, b))
 
-    if check == 0:
+edges.sort()
+
+for edge in edges:
+    cost, a, b = edge
+
+    if find_parent(parent, a) != find_parent(parent, b):
         union_parent(parent, a, b)
-    elif check == 1:
-        if find_parent(parent, a) == find_parent(parent, b):
-            print("YES")
-        else:
-            print("NO")
+        result += cost
+        last = cost
+
+print(result - last)
