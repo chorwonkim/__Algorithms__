@@ -773,46 +773,117 @@
 #             print("NO")
 
 # 10-3
-from sys import stdin
-Read = stdin.readline
+# from sys import stdin
+# Read = stdin.readline
+#
+# def find_parent(parent, x):
+#     if parent[x] != x:
+#         parent[x] = find_parent(parent, parent[x])
+#
+#     return parent[x]
+#
+# def union_parent(parent, a, b):
+#     a = find_parent(parent, a)
+#     b = find_parent(parent, b)
+#
+#     if a < b:
+#         parent[b] = a
+#     else:
+#         parent[a] = b
+#
+# n, m = map(int, Read().split())
+# parent = [0] * (n+1)
+#
+# edges = []
+# result = 0
+# last = 0
+#
+# for i in range(1, n+1):
+#     parent[i] = i
+#
+# for _ in range(m):
+#     a, b, c = map(int, Read().split())
+#     edges.append((c, a, b))
+#
+# edges.sort()
+#
+# for edge in edges:
+#     cost, a, b = edge
+#
+#     if find_parent(parent, a) != find_parent(parent, b):
+#         union_parent(parent, a, b)
+#         result += cost
+#         last = cost
+#
+# print(result - last)
 
-def find_parent(parent, x):
-    if parent[x] != x:
-        parent[x] = find_parent(parent, parent[x])
+# Topology Sort
+# from collections import deque
+#
+# v, e = map(int, input().split())
+# indegree = [0] * (v+1)
+# graph = [[] for _ in range(v+1)]
+#
+# for _ in range(e):
+#     a, b = map(int, input().split())
+#     graph[a].append(b)
+#     indegree[b] += 1
+#
+# def topology_sort():
+#     result = []
+#     q = deque()
+#
+#     for i in range(1, v+1):
+#         if indegree[i] == 0:
+#             q.append(i)
+#
+#     while q:
+#         now = q.popleft()
+#         result.append(now)
+#
+#         for i in graph[now]:
+#             indegree[i] -= 1
+#             if indegree[i] == 0:
+#                 q.append(i)
+#
+#     for i in result:
+#         print(i, end=' ')
+#
+# topology_sort()
 
-    return parent[x]
+# 10-4
+import copy
+from collections import deque
 
-def union_parent(parent, a, b):
-    a = find_parent(parent, a)
-    b = find_parent(parent, b)
-
-    if a < b:
-        parent[b] = a
-    else:
-        parent[a] = b
-
-n, m = map(int, Read().split())
-parent = [0] * (n+1)
-
-edges = []
-result = 0
-last = 0
+n = int(input())
+indegree = [0] * (n+1)
+graph = [[] for _ in range(n+1)]
+time = [0] * (n+1)
 
 for i in range(1, n+1):
-    parent[i] = i
+    data = list(map(int, input().split()))
+    time[i] = data[0]
+    for x in data[1:-1]:
+        graph[x].append(i)
+        indegree[i] += 1
 
-for _ in range(m):
-    a, b, c = map(int, Read().split())
-    edges.append((c, a, b))
+def topology_sort():
+    result = copy.deepcopy(time)
+    q = deque()
 
-edges.sort()
+    for i in range(1, n+1):
+        if indegree[i] == 0:
+            q.append(i)
 
-for edge in edges:
-    cost, a, b = edge
+    while q:
+        now = q.popleft()
+        for i in graph[now]:
+            result[i] = max(result[i], result[now] + time[i])
+            indegree[i] -= 1
+            if indegree[i] == 0:
+                q.append(i)
 
-    if find_parent(parent, a) != find_parent(parent, b):
-        union_parent(parent, a, b)
-        result += cost
-        last = cost
+    for i in range(1, n+1):
+        print(result[i])
 
-print(result - last)
+topology_sort()
