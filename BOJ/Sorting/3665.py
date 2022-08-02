@@ -1,3 +1,4 @@
+# ING
 from collections import deque
 from sys import stdin
 Read = stdin.readline
@@ -32,11 +33,15 @@ for _ in range(t):
     last_rank = list(map(int, Read().split()))
     m = int(Read())
     indegree = [0] * (n+1)
+
+    for i in range(1, n+1):
+        indegree[i] = i
+
     graph = [[] for _ in range(n+1)]
-    
+
     for _ in range(m):
         a, b = map(int, Read().split())
-        indegree[a] += 1
-        graph[b].append(a)
+        indegree[b] += 1
+        graph[a].append(b)
 
     topology_sort()
