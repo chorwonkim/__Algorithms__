@@ -1,8 +1,17 @@
-eq = input()
-stands = ['-', '+']
+eq = input().split('-')
+
+number = []
+
 for i in eq:
-    temp = ''
-    if i not in stands:
-        temp += i
-    else:
-        temp = int(temp)
+    sum = 0
+    temp = i.split('+')
+
+    for j in temp:
+        sum += int(j)
+
+    number.append(sum)
+
+result = number[0]
+for i in number[1:]:
+    result -= i
+print(result)
