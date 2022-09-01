@@ -15,5 +15,6 @@ while True:
         result *= l
         result += l
 
+
     print("Case " + str(t) + ": " + str(result))
     t += 1
